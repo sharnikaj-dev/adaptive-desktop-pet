@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes pet-breathe {
+  0%, 100% {
+    transform: scaleY(1) translateY(0px);
+  }
+  50% {
+    transform: scaleY(1.035) translateY(-1.5px);
+  }
+}
+
+@keyframes pet-tail-wag {
+  0%, 100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes float-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scale(1.05);
+  }
+}
+
+@keyframes walk-bob {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+@keyframes pet-roll {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translateY(-14px) rotate(120deg) scale(0.95);
+  }
+  70% {
+    transform: translateY(-8px) rotate(260deg) scale(0.95);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes pet-hop {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+  }
+  20% {
+    transform: translateY(2px) scaleY(0.92);
+  }
+  55% {
+    transform: translateY(-18px) scaleY(1.06);
+  }
+}
+
+@keyframes pet-wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-18deg) translateY(-4px);
+  }
+  50% {
+    transform: rotate(12deg) translateY(-5px);
+  }
+  75% {
+    transform: rotate(-16deg) translateY(-4px);
+  }
+}
+
+.animate-pet-breathe {
+  animation: pet-breathe 3.2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-pet-tail {
+  animation: pet-tail-wag 2.2s ease-in-out infinite;
+  transform-origin: 36px 74px;
+}
+
+.animate-pet-walk {
+  animation: walk-bob 0.36s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-pet-roll {
+  animation: pet-roll 0.72s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  transform-origin: center center;
+}
+
+.animate-pet-hop {
+  animation: pet-hop 0.55s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-pet-wave {
+  animation: pet-wave 0.75s ease-in-out infinite;
+  transform-origin: 74px 92px;
+}
+
+.animate-float-particle {
+  animation: float-up-fade 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pet-breathe,
+  .animate-pet-tail,
+  .animate-pet-walk,
+  .animate-pet-roll,
+  .animate-pet-hop,
+  .animate-pet-wave,
+  .animate-float-particle {
+    animation: none !important;
+  }
+}

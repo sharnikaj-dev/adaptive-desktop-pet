@@ -1,0 +1,6 @@
+{
+  "name": "Komo — Adaptive Desktop Pet",
+  "description": "A behavior-aware virtual desktop pet that adapts to user activity, habits, emotions, and interactions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
